@@ -1,0 +1,45 @@
+{
+  "name": "nvim-terminal-editor",
+  "displayName": "Neovim Terminal Editor",
+  "description": "Open the active VS Code file in Neovim inside a terminal editor.",
+  "version": "0.0.1",
+  "publisher": "pionus",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:pionus.nvimTerminalEditor.openCurrentFile",
+    "onCommand:pionus.nvimDiagnostics.goToFirst",
+    "onCommand:pionus.nvimDiagnostics.goToLast",
+    "onCommand:pionus.renderedPreview.openToSide",
+    "onCommand:pionus.renderedPreview.close"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pionus.nvimTerminalEditor.openCurrentFile",
+        "title": "Open Current File in Neovim Terminal Editor"
+      },
+      {
+        "command": "pionus.nvimDiagnostics.goToFirst",
+        "title": "Go to First Diagnostic in Current File"
+      },
+      {
+        "command": "pionus.nvimDiagnostics.goToLast",
+        "title": "Go to Last Diagnostic in Current File"
+      },
+      {
+        "command": "pionus.renderedPreview.openToSide",
+        "title": "Open Rendered Preview to the Side"
+      },
+      {
+        "command": "pionus.renderedPreview.close",
+        "title": "Close Rendered Preview"
+      }
+    ]
+  }
+}
