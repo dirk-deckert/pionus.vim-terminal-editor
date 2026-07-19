@@ -12,7 +12,7 @@ and commands for opening and closing rendered previews.
 
 ## Editor selection
 
-Neovim is the default. Select Vim in VS Code settings:
+Vim is the default. To select it explicitly in VS Code's `settings.json`:
 
 ```json
 {
@@ -20,7 +20,13 @@ Neovim is the default. Select Vim in VS Code settings:
 }
 ```
 
-Use `"nvim"` to select Neovim again.
+To use Neovim instead:
+
+```json
+{
+  "pionus.vimTerminalEditor.editor": "nvim"
+}
+```
 
 ## Keybindings
 

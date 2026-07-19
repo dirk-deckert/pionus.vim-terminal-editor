@@ -22,8 +22,8 @@ test("manifest exposes the renamed identity and Vim/Neovim selection", () => {
 
     assert.equal(`${manifest.publisher}.${manifest.name}`, "pionus.vim-terminal-editor");
     assert.equal(manifest.displayName, "Pionus Vim Terminal Editor");
-    assert.deepEqual(configuration["pionus.vimTerminalEditor.editor"].enum, ["nvim", "vim"]);
-    assert.equal(configuration["pionus.vimTerminalEditor.editor"].default, "nvim");
+    assert.deepEqual(configuration["pionus.vimTerminalEditor.editor"].enum, ["vim", "nvim"]);
+    assert.equal(configuration["pionus.vimTerminalEditor.editor"].default, "vim");
     assert.ok(commandIds.includes("pionus.vimTerminalEditor.openCurrentFile"));
     assert.ok(manifest.activationEvents.includes("onCommand:pionus.nvimTerminalEditor.openCurrentFile"));
 });

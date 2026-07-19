@@ -307,7 +307,7 @@ function activate(context) {
 
             const editorName = vscode.workspace
                 .getConfiguration("pionus.vimTerminalEditor")
-                .get("editor", "nvim");
+                .get("editor", "vim");
             const editorPath = resolveEditorPath(editorName);
             if (!editorPath) {
                 const displayName = editorName === "vim" ? "Vim" : "Neovim";

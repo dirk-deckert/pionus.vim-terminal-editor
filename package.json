@@ -2,7 +2,7 @@
   "name": "vim-terminal-editor",
   "displayName": "Pionus Vim Terminal Editor",
   "description": "Open the active VS Code file in Vim or Neovim inside a terminal editor with Pionus.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "pionus",
   "license": "MIT",
   "homepage": "https://github.com/dirk-deckert/pionus.vim-terminal-editor#readme",
@@ -15,6 +15,7 @@
   },
   "keywords": [
     "pionus",
+    "vim",
     "neovim",
     "terminal",
     "diagnostics",
@@ -71,14 +72,14 @@
         "pionus.vimTerminalEditor.editor": {
           "type": "string",
           "enum": [
-            "nvim",
-            "vim"
+            "vim",
+            "nvim"
           ],
           "enumDescriptions": [
-            "Use Neovim.",
-            "Use Vim."
+            "Use Vim.",
+            "Use Neovim."
           ],
-          "default": "nvim",
+          "default": "vim",
           "description": "Terminal editor executable to use."
         }
       }

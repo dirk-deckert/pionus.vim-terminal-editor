@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- Make Vim the default terminal editor.
+- Document explicit Vim and Neovim configuration examples.
+
 ## 0.1.0
 
 - Rename the extension to `pionus.vim-terminal-editor`.
