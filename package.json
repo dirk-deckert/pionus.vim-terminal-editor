@@ -1,8 +1,8 @@
 {
   "name": "vim-terminal-editor",
   "displayName": "Pionus Vim Terminal Editor",
-  "description": "Open the active VS Code file in Vim or Neovim inside a terminal editor with Pionus.",
-  "version": "0.1.2",
+  "description": "Pionus Vim Terminal Editor opens the active VS Code file in Vim or Neovim inside a terminal.",
+  "version": "0.1.3",
   "publisher": "pionus",
   "license": "MIT",
   "icon": "assets/icon.png",
@@ -48,23 +48,23 @@
     "commands": [
       {
         "command": "pionus.vimTerminalEditor.openCurrentFile",
-        "title": "Open Current File in Vim Terminal Editor"
+        "title": "Pionus Vim Terminal Editor: Open Current File"
       },
       {
         "command": "pionus.nvimDiagnostics.goToFirst",
-        "title": "Go to First Diagnostic in Current File"
+        "title": "Pionus Vim Terminal Editor: Go to First Diagnostic"
       },
       {
         "command": "pionus.nvimDiagnostics.goToLast",
-        "title": "Go to Last Diagnostic in Current File"
+        "title": "Pionus Vim Terminal Editor: Go to Last Diagnostic"
       },
       {
         "command": "pionus.renderedPreview.openToSide",
-        "title": "Open Rendered Preview to the Side"
+        "title": "Pionus Vim Terminal Editor: Open Rendered Preview to the Side"
       },
       {
         "command": "pionus.renderedPreview.close",
-        "title": "Close Rendered Preview"
+        "title": "Pionus Vim Terminal Editor: Close Rendered Preview"
       }
     ],
     "configuration": {
@@ -81,7 +81,7 @@
             "Use Neovim."
           ],
           "default": "vim",
-          "description": "Terminal editor executable to use."
+          "description": "Select the editor used by Pionus Vim Terminal Editor."
         }
       }
     }

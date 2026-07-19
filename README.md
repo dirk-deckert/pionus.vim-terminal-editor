@@ -1,8 +1,9 @@
 # Pionus Vim Terminal Editor
 
-VS Code extension from Pionus GmbH for opening the active file in Vim or Neovim
-inside a terminal editor. It also provides current-file diagnostic navigation
-and commands for opening and closing rendered previews.
+Pionus Vim Terminal Editor is a VS Code extension from Pionus GmbH for opening
+the active file in Vim or Neovim inside a terminal. It also provides
+current-file diagnostic navigation and commands for opening and closing
+rendered previews.
 
 ## Requirements
 

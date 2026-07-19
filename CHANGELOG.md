@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3
+
+- Use the full Pionus Vim Terminal Editor name consistently across command
+  titles, configuration, runtime messages, terminal labels, and README.
+- Preserve all existing command IDs and setting IDs.
+
 ## 0.1.2
 
 - Add a dedicated Pionus Vim Terminal Editor extension icon.

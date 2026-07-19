@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const vscode = require("vscode");
 
+const EXTENSION_DISPLAY_NAME = "Pionus Vim Terminal Editor";
+
 const EDITOR_CANDIDATES = {
     nvim: [
         "nvim",
@@ -131,7 +133,7 @@ function compareDiagnostics(a, b) {
 function diagnosticsForActiveEditor() {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
-        vscode.window.showWarningMessage("Open an editor before navigating diagnostics.");
+        vscode.window.showWarningMessage(`${EXTENSION_DISPLAY_NAME}: open an editor before navigating diagnostics.`);
         return undefined;
     }
 
@@ -159,7 +161,7 @@ function registerDiagnosticNavigationCommand(context, command, selectDiagnostic)
 
         const diagnostic = selectDiagnostic(result.diagnostics);
         if (!diagnostic) {
-            vscode.window.showInformationMessage("No diagnostics in the current file.");
+            vscode.window.showInformationMessage(`${EXTENSION_DISPLAY_NAME}: no diagnostics in the current file.`);
             return;
         }
 
@@ -230,7 +232,7 @@ async function openRenderedPreviewToSide() {
         return;
     }
 
-    vscode.window.showInformationMessage("No rendered preview command is configured for the active file.");
+    vscode.window.showInformationMessage(`${EXTENSION_DISPLAY_NAME}: no rendered preview command is configured for the active file.`);
 }
 
 function tabInputViewType(input) {
@@ -293,7 +295,7 @@ async function closeRenderedPreview() {
         }
     }
 
-    vscode.window.showInformationMessage("No rendered preview tab is open.");
+    vscode.window.showInformationMessage(`${EXTENSION_DISPLAY_NAME}: no rendered preview tab is open.`);
 }
 
 function activate(context) {
@@ -301,7 +303,7 @@ function activate(context) {
             const editor = vscode.window.activeTextEditor;
             const filePath = editor ? localFilePath(editor.document) : undefined;
             if (!editor || !filePath) {
-                vscode.window.showWarningMessage("Open a local saved file before launching Vim or Neovim.");
+                vscode.window.showWarningMessage(`${EXTENSION_DISPLAY_NAME}: open a local saved file before launching Vim or Neovim.`);
                 return;
             }
 
@@ -312,7 +314,7 @@ function activate(context) {
             if (!editorPath) {
                 const displayName = editorName === "vim" ? "Vim" : "Neovim";
                 vscode.window.showWarningMessage(
-                    `${displayName} was not found on PATH or in common install locations.`
+                    `${EXTENSION_DISPLAY_NAME}: ${displayName} was not found on PATH or in common install locations.`
                 );
                 return;
             }
@@ -320,7 +322,7 @@ function activate(context) {
             if (editor.document.isDirty) {
                 const saved = await editor.document.save();
                 if (!saved) {
-                    vscode.window.showWarningMessage("Save the file before launching the terminal editor.");
+                    vscode.window.showWarningMessage(`${EXTENSION_DISPLAY_NAME}: save the file before launching the terminal editor.`);
                     return;
                 }
             }
@@ -333,7 +335,7 @@ function activate(context) {
             const lineText = editor.document.lineAt(cursor.line).text;
             const byteColumn = toEditorByteColumn(lineText, cursor.character);
             const terminal = vscode.window.createTerminal({
-                name: `${editorName} ${path.basename(filePath)}`,
+                name: `${EXTENSION_DISPLAY_NAME}: ${editorName} ${path.basename(filePath)}`,
                 shellPath: editorPath,
                 shellArgs: [
                     "-c",

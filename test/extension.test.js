@@ -19,9 +19,12 @@ test("manifest exposes the renamed identity and Vim/Neovim selection", () => {
     const manifest = require("../package.json");
     const configuration = manifest.contributes.configuration.properties;
     const commandIds = manifest.contributes.commands.map(({ command }) => command);
+    const commandTitles = manifest.contributes.commands.map(({ title }) => title);
 
     assert.equal(`${manifest.publisher}.${manifest.name}`, "pionus.vim-terminal-editor");
     assert.equal(manifest.displayName, "Pionus Vim Terminal Editor");
+    assert.equal(manifest.contributes.configuration.title, "Pionus Vim Terminal Editor");
+    assert.ok(commandTitles.every((title) => title.startsWith("Pionus Vim Terminal Editor: ")));
     assert.deepEqual(configuration["pionus.vimTerminalEditor.editor"].enum, ["vim", "nvim"]);
     assert.equal(configuration["pionus.vimTerminalEditor.editor"].default, "vim");
     assert.ok(commandIds.includes("pionus.vimTerminalEditor.openCurrentFile"));
